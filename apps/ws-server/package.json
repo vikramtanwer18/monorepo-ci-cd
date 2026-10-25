@@ -1,0 +1,21 @@
+{
+  "name": "ws-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.ts",
+    "start": "node index.ts",
+    "build": "tsc",
+    "check-types": "tsc"
+  },
+  "dependencies": {
+    "@repo/db": "workspace:*",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/ws": "^8.18.2",
+    "@types/node": "26.4.1"
+  }
+}

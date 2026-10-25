@@ -1,0 +1,10 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "inputs": ["src/prisma/contract.prisma", "prisma.config.ts"],
+      "outputs": ["src/prisma/contract.json", "src/prisma/contract.d.ts"]
+    }
+  }
+}
