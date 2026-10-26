@@ -1,0 +1,24 @@
+name: Build and Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+    build:
+      runs-on: ubuntu-lates
+      steps: 
+       - run: |
+           echo ${{secrets.SSH_PRIVATE_KEY}} &> ~/ssh_key
+           ssh -i ~/ssh_key root@13.233.144.146
+           cd monorepo-ci-cd/ && git pull origin main
+           pnpm install 
+           pnpm run build
+           pm2 start all
+
+
+
+
+
